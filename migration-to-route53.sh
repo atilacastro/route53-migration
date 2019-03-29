@@ -16,3 +16,4 @@ elif [ "$ZONEXIST" -eq "0" ];
            cli53 create $LINE --comment 'Domain'
            cli53 import --file $LINE --replace --wait $LINE
 fi
+done
