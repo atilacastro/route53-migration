@@ -12,7 +12,7 @@ ZONES=$(cat /teknisa/route53-migration/file.txt)
 ZONES=(${ZONES})
 
 for LINE in ${ZONES[@]}; do
-ZONEXIST=$(cli53 list | awk '{print "" $2}' | grep -i $LINE | wc -l)
+ZONEXIST=$(cli53 list | awk '{print "" $2}' | grep "^$LINE.$" | wc -l)
 
 if [ "$ZONEXIST" -ge "1" ];
   then
